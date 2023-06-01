@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>signup</title>
+</head>
+
+<style>
+	form {
+  border: 3px solid #f1f1f1;
+  text-align:center;
+}
+
+input[type=text], input[type=password],input[type=email] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+</style>
+<body>
+ 
+ <center><h1>SIGN UP IN TO OCO&MS </h1></center>
+<form action="account" method="post">
+
+  <div class="container">
+    <label for="fname"><b>FirstName</b></label>
+    <input type="text" placeholder="Enter FirstName" name="fname" required>
+	<br>
+    <label for="lname"><b>LastName</b></label>
+    <input type="text" placeholder="Enter LastName" name="lname" required>
+    <br>
+    <label for="telephone"><b>Telephone</b></label>
+    <input type="text" placeholder="Enter Telephone" name="telephone" required>
+     <br>
+    <label for="district"><b>District</b></label>
+    <input type="text" placeholder="Enter District" name="district" required>
+     <br>
+    <label for="sector"><b>Sector</b></label>
+    <input type="text" placeholder="Enter Sector" name="sector" required>
+     <br>
+    <label for="cell"><b>Cell</b></label>
+    <input type="text" placeholder="Enter Cell" name="cell" required>
+     <br>
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required>
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    
+    <button type="submit">Create Account</button><br><br>
+    <a th:href= "@{/}" class="btn btn-primary btn-sm mb-3">Login</a>
+    
+</div>
+</form>
+</body>
+</html>

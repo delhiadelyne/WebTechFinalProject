@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>login Form</title>
+</head>
+
+<style>
+	form {
+  border: 3px solid #f1f1f1;
+  text-align:center;
+  background-image:url("pic/naked neck.jpg");
+}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+</style>
+
+
+<body>
+  <center><I><h1>Online Chicken Ordering Management System</h1></I></center>
+  <center><h2>LOGIN TO OCO&MS</h2></center>
+  
+<form action="logincustomer" method="post">
+
+  <div class="container">
+    <label for="uname"><b>Telephone</b></label>
+    <input type="text" placeholder="Enter Telphone" name="telephone" required>
+	<br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button><br><br>
+    <a th:href= "@{/signupcustomers}" class="btn btn-primary btn-sm mb-3">Sign Up </a>
+</div>
+</form>
+</body>
+</html>

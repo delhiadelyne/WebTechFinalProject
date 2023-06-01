@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ordering Chicken Management System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class="container">
+   <h1>Update chicken Order</h1>
+   <hr>
+   
+   <form action="#" th:action="@{/update/{id}}" th:object="${customer}"  method="POST">
+   <input type="text" th:field="*{id}" placeholder="Customer id" class="form-control mb-4 col-4">
+   <input type="text" th:field="*{chickenName}" placeholder="Customer ChickenName" class="form-control mb-4 col-4">
+   <input type="text" th:field="*{price}" placeholder="Customer Price" class="form-control mb-4 col-4">
+   <input type="text" th:field="*{type}" placeholder="Customer type" class="form-control mb-4 col-4">
+   <input type="text" th:field="*{quantity}" placeholder="Customer quantity" class="form-control mb-4 col-4">
+   <input type="text" th:field="*{days}" placeholder="Customer days" class="form-control mb-4 col-4">
+   
+   <button type="submit" class="btn btn-info col-2">Save Chicken</button>
+   
+   </form>
+ 
+  
+</div>
+</body>
+</html>

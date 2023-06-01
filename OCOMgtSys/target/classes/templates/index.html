@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ordering Chicken Management System</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+   <div class="container my-2">
+     <h1>Ordered Chickens List</h1>
+     
+     <a th:href= "@{/addnewcustomers}" class="btn btn-primary btn-sm mb-3">Add Chicken </a>
+     
+     <table border="1" class="table table- striped table-responsive-md">
+     <thead>
+     <tr>
+     <th>Chicken id</th>
+     <th>ChickenName</th>
+     <th>Chicken Price</th>
+     <th>Chicken Type</th>
+     <th>Chicken Quantity</th>
+     <th>Days of Chicken</th>
+     <th>Update</th>
+     <th>Delete</th>
+     </tr>
+     </thead>
+     
+     <tbody>
+     <tr th:each="customer:${listCustomers}">
+      <td th:text="${customer.id}"></td>
+     <td th:text="${customer.chickenName}"></td>
+     <td th:text="${customer.price}"></td>
+     <td th:text="${customer.type}"></td>
+     <td th:text="${customer.quantity}"></td>
+     <td th:text="${customer.days}"></td>
+     <td><a th:href="@{/updates/{id}(id=${customer.id})}">Update</a></td>
+     <td><a th:href="@{/delete/{id}(id=${customer.id})}">Disable</a></td>
+     </tbody>
+     
+     </table>
+     <div th:if="${totalPages > 1}">
+    <div  class="row col-sm-10">
+        <div class="col-sm-2">
+            Total Row: [[${totalItems}]]
+        </div>
+        <div class="col-sm-1">
+                <span th:each="i :${#numbers.sequence(1,totalPages)}">
+                    <a th:if="${currentPage !=i}" th:href="@{'/page/' +${i}}">[[${i}]]</a>
+                    <span th:unless="${currentPage !=i}">[[${i}]]</span> &nbsp;&nbsp;
+                </span>
+        </div>
+        <div class="col-sm-1">
+            <a th:if="${currentPage < totalPages}" th:href="@{'/page/' +${currentPage +1}}">Next</a>
+            <span th:unless="${currentPage < totalPages}">Next</span>
+        </div>
+        <div class="col-sm-1">
+            <a th:if="${currentPage < totalPages}" th:href="@{'/page/' +${currentPage}}">Last</a>
+            <span th:unless="${currentPage < totalPages}">Last</span>
+        </div>
+    </div>
+</div> 
+</div>
+</body>
+</html>
